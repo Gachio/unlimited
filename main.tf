@@ -5,13 +5,11 @@ provider "aws" {
 resource "aws_s3_bucket" "unlimited_state" {
     bucket = "unlimit-up"
 
-    lifecycle {
-        create_before_destroy = true
-    }
+    force_destroy = true
 
     versioning {
         enabled = true
-    }
+}
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "unlimit-demo" {
