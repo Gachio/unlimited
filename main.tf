@@ -35,6 +35,7 @@ resource "aws_dynamodb_table" "unlimited_locks" {
     }
 }
 
+/*
 terraform {
   backend "s3" {
     bucket = "unlimit-up"
@@ -44,6 +45,7 @@ terraform {
     encrypt = true
   }
 }
+*/
 
 output "s3_bucket_arn" {
   value = aws_s3_bucket.unlimited_state.arn
